@@ -28,7 +28,7 @@ body{
 #galery{
 	float: left;
 	height: 65vh;
-	width: 55%;
+	width: 100%;
 	display: inline-block;
 	margin: 10px;
 }
@@ -94,7 +94,7 @@ body{
 #description{
 	float: right;
 	max-height: 46.5vh;
-	width: 42%;
+	width: 100%;
 	overflow-y: auto;
 	text-align: left;
 	font-size: 15pt;
