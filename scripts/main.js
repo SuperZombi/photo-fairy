@@ -47,4 +47,7 @@ function check_widht(firs_time){
 window.onload = function(){check_widht(true)}
 window.addEventListener("resize", function(){
 	check_widht()
-})
+});
+window.addEventListener("orientationchange", function() {
+	check_widht()
+});
