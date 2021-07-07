@@ -44,10 +44,25 @@ function check_widht(firs_time){
 	}
 }
 
-window.onload = function(){check_widht(true)}
+function orientation(){
+	if (screen.orientation.angle == 0){
+		document.getElementsByClassName("gallery-nav")[0].style.marginTop = "0px"
+		document.getElementById("description").style.marginTop = "0px";
+	}
+	if (screen.orientation.angle == 90){
+		document.getElementsByClassName("gallery-nav")[0].style.marginTop = "120px"
+		document.getElementById("description").style.marginTop = "120px";
+	}
+}
+
+window.onload = function(){
+	check_widht(true)
+}
+
 window.addEventListener("resize", function(){
 	check_widht()
 });
+
 window.addEventListener("orientationchange", function() {
-	check_widht()
+	orientation();
 });
