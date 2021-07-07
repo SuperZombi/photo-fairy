@@ -11,9 +11,9 @@ function check_widht(firs_time){
 
 		array = document.getElementsByClassName("gallery-main")
 		Object.keys(array).forEach(function (key){
-		    array2 = array[key].getElementsByClassName("gallery-cell")
-		    Object.keys(array2).forEach(function (key){
-			    array2[key].style.width = "66%";
+			array2 = array[key].getElementsByClassName("gallery-cell")
+			Object.keys(array2).forEach(function (key){
+				array2[key].style.width = "66%";
 			});
 		});
 	}
@@ -29,9 +29,9 @@ function check_widht(firs_time){
 
 		array = document.getElementsByClassName("gallery-main")
 		Object.keys(array).forEach(function (key){
-		    array2 = array[key].getElementsByClassName("gallery-cell")
-		    Object.keys(array2).forEach(function (key){
-			    array2[key].style.width = "100%";
+			array2 = array[key].getElementsByClassName("gallery-cell")
+			Object.keys(array2).forEach(function (key){
+				array2[key].style.width = "100%";
 			});
 		});
 
