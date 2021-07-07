@@ -3,6 +3,7 @@
 <head>
 	<title>Photo Fairy</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
 	<link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
 	<link rel="stylesheet" href="styles/main.css">
@@ -15,22 +16,31 @@
 
 <div id="body">
 	<div id="header">
-		<div class="dropdown">
-		  <button class="dropbtn">Dropdown</button>
-		  <div class="dropdown-content">
-		  <a href="#">Link 1</a>
-		  <a href="#">Link 2</a>
-		  <a href="#">Link 3</a>
-		  </div>
-		</div>
+		<a id="logo">
 
-		<div class="dropdown">
-		  <button class="dropbtn">Dropdown</button>
-		  <div class="dropdown-content">
-		  <a href="#">Link 1</a>
-		  <a href="#">Link 2</a>
-		  <a href="#">Link 3</a>
-		  </div>
+		</a>
+
+		<div id="dropdownmenu">
+			<div class="dropdown">
+			  <a href="#"><button class="dropbtn">Главная</button></a>
+			</div>
+
+			<div class="dropdown">
+			  <button class="dropbtn">Категории</button>
+			  <div class="dropdown-content">
+				<a href="#">Детские чашки</a>
+				<a href="#">Взрослые чашки</a>
+			  </div>
+			</div>
+
+			<div class="dropdown">
+			  <button class="dropbtn">Dropdown</button>
+			  <div class="dropdown-content">
+				<a href="#">Link 1</a>
+				<a href="#">Link 2</a>
+				<a href="#">Link 3</a>
+			  </div>
+			</div>
 		</div>
 	</div>
 
@@ -99,7 +109,7 @@
 	</div>
 
 	<div id="more_block">
-		
+		Чашка-хамелеон, которая меняет цвет от температуры жидкости, которую содержит. На чашку можно выбрать любую фотографию по желанию. Также можно выбрать и без функции хамелеон (обычная чашка).
 	</div>
 </div>	
 </body>
