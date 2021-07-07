@@ -31,6 +31,7 @@ body{
 	width: 300px;
 	display: inline-block;
 	float: left;
+	margin-left: auto;
 	margin-right: 25px;
 }
 
@@ -118,7 +119,7 @@ body{
 	width: 98%;
 	float: right;
 	font-size: 15pt;
-	text-align: left;
+	text-align: center;
 	font-family: 'Comfortaa';
 	position: relative;
 	right: 1%;
