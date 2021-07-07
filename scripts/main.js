@@ -8,6 +8,7 @@ function check_widht(firs_time){
 		document.getElementById("dropdownmenu").style.width = "calc(100% - 325px)";
 		document.getElementById("dropdownmenu").style.textAlign = "left";
 		document.getElementById("logo").style.float = "left";
+		document.getElementById("logo").style.marginRight = "25px";
 
 		array = document.getElementsByClassName("gallery-main")
 		Object.keys(array).forEach(function (key){
@@ -26,6 +27,7 @@ function check_widht(firs_time){
 		document.getElementById("dropdownmenu").style.width = "100%";
 		document.getElementById("dropdownmenu").style.textAlign = "center";
 		document.getElementById("logo").style.float = "none";
+		document.getElementById("logo").style.marginRight = "auto";
 
 		array = document.getElementsByClassName("gallery-main")
 		Object.keys(array).forEach(function (key){
