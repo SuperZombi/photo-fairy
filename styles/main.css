@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 body{
 	background-color: grey;
 	text-align: center;
@@ -12,6 +13,7 @@ body{
 	margin-top: 10px;
 	display: inline-block;
 	min-width: 75vw;
+	width: auto;
 }
 
 #header{
@@ -19,6 +21,17 @@ body{
 	height: 50px;
 	width: 100%;
 	margin-bottom: 20px;
+}
+#logo{
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: red;
+  height: 50px;
+  width: 300px;
+  display: inline-block;
+  float: left;
+  margin-right: 25px;
 }
 
 #name{
@@ -102,10 +115,13 @@ body{
 }
 
 #more_block{
-	background-color: lightgrey;
-	height: 100px;
-	width: 100%;
+	width: 98%;
 	float: right;
+  font-size: 15pt;
+  text-align: left;
+  font-family: 'Comfortaa';
+  position: relative;
+  right: 1%;
 }
 
 #price{
@@ -119,7 +135,8 @@ body{
 table{
 	border-collapse: collapse;
   margin-left: auto;
-  margin-right: auto;	
+  margin-right: auto;
+  margin-bottom: 15px;
 }
 td {
   font-size: 16px;
@@ -136,7 +153,14 @@ tr:nth-child(2n) {
 
 
 
-
+#dropdownmenu{
+  float: left;
+  height: auto;
+  width: calc(100% - 325px);
+  max-width: 54vw;
+  white-space: nowrap;
+  text-align: left;
+}
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -146,16 +170,19 @@ tr:nth-child(2n) {
   cursor: pointer;
   border-radius: 10px;
   transition: 0.25s;
+  box-shadow: 0 4px 0 #008405;
 }
 .dropdown {
   position: relative;
   display: inline-block;
+  margin: 4px 5px;
+  text-align: center;
 }
 
 .dropdown-content {
   position: absolute;
   background-color: white;
-  min-width: 150px;
+  width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 8px;
@@ -172,6 +199,7 @@ tr:nth-child(2n) {
   display: block;
   transition: 0.25s;
   border-radius: 8px;
+  white-space: normal;
 }
 
 .dropdown-content a:hover {background-color: lightgrey}
@@ -181,4 +209,5 @@ tr:nth-child(2n) {
 }
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+  box-shadow: 0 0px 0 #008405;
 }
