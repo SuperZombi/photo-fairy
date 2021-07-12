@@ -56,6 +56,7 @@ function orientation(){
 }
 
 window.onload = function(){
+	window.scrollTo(0,0)
 	try {
 		check_widht(true);
 		
@@ -67,6 +68,7 @@ window.onload = function(){
 
 	document.body.classList.add('loaded_hiding');
 	document.getElementById("body").style.transform = "scale(1)";
+	new WOW().init();
 	window.setTimeout(function () {
 		document.body.classList.add('loaded');
 		document.body.classList.remove('loaded_hiding');
