@@ -17,6 +17,8 @@ body{
 	display: inline-block;
 	min-width: 75vw;
 	width: auto;
+	transform: scale(0.1);
+	transition: 0.3s ease-in-out;
 }
 
 /* Прелоадер */
@@ -28,6 +30,8 @@ body{
 	bottom: 0;
 	background: #e0e0e0;
 	z-index: 1001;
+	width: 100vw;
+	height: 100vh;
 }
 .preloader__row {
 	position: relative;
