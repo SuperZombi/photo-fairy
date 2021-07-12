@@ -56,7 +56,14 @@ function orientation(){
 }
 
 window.onload = function(){
-	try { check_widht(true) }catch {;}
+	try {
+		check_widht(true);
+		
+		var $carousel = $('.gallery-main');
+		$carousel.on( 'fullscreenChange.flickity', function( event, isFullscreen ) {
+			window.scrollTo(0,0)
+		});
+	} catch {;}
 
 	document.body.classList.add('loaded_hiding');
 	document.getElementById("body").style.transform = "scale(1)";
@@ -74,3 +81,4 @@ window.addEventListener("resize", function(){
 window.addEventListener("orientationchange", function() {
 	try { orientation() }catch {;}
 });
+
