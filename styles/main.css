@@ -18,6 +18,10 @@ body{
 	min-width: 75vw;
 	width: auto;
 	transform: scale(0.05);
+	overflow: hidden;
+}
+.wow {
+	visibility: hidden;
 }
 
 /* Прелоадер */
@@ -375,3 +379,4 @@ tr:nth-child(2n) {
 	transition: .5s ease-in-out;
 }
 /* -------- */
+
