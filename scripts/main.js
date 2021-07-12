@@ -56,13 +56,19 @@ function orientation(){
 }
 
 window.onload = function(){
-	check_widht(true)
+	try { check_widht(true) }catch {;}
+
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+	}, 500);
 }
 
 window.addEventListener("resize", function(){
-	check_widht()
+	try { check_widht() }catch {;}
 });
 
 window.addEventListener("orientationchange", function() {
-	orientation();
+	try { orientation() }catch {;}
 });
