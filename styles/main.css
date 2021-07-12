@@ -17,8 +17,7 @@ body{
 	display: inline-block;
 	min-width: 75vw;
 	width: auto;
-	transform: scale(0.1);
-	transition: 0.3s ease-in-out;
+	transform: scale(0.05);
 }
 
 /* Прелоадер */
