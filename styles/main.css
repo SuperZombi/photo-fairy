@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+
 body{
 	background-color: grey;
 	text-align: center;
@@ -63,7 +66,19 @@ body{
 	border-radius: 8px;
 }
 
-.gallery-cell div, img{
+.gallery-cell div{
+	display: block;
+	max-height: 100%;
+	max-width: 100%;
+	/* vertically center */
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	/* horizontal center */
+	margin-left: auto;
+	margin-right: auto;
+}
+.gallery-cell img{
 	display: block;
 	max-height: 100%;
 	max-width: 100%;
@@ -211,4 +226,83 @@ tr:nth-child(2n) {
 .dropdown:hover .dropbtn {
 	background-color: #3e8e41;
 	box-shadow: 0 0px 0 #008405;
+}
+
+
+
+/* Главная */
+#main_menu_categories{
+	text-align: left;
+	text-align: center;
+}
+.main_menu_categories_el{
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	border: 5px outset #b7bab7;
+	margin: 5px 8px;
+}
+.main_menu_categories_el img{
+	height: 250px;
+}
+.main_menu_categories_el h1{
+	font-family: "Roboto Mono";
+	text-align: center;
+	margin: 0 0;
+	margin-bottom: 8px;
+}
+.nonfocus_block{
+	padding: 5px 15px;
+}
+.focus_block{
+	background-color: lightgrey;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transition: .5s;
+	opacity: 0;
+	text-align: center;
+}
+.focus_block_content{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.main_menu_categories_el:hover .focus_block{
+	transform: translateY(-100%) scale(1);
+	opacity: .8;
+}
+
+.bt button {
+	position: relative;
+	color: white;
+	font-size: 14pt;
+	font-family: 'Cuprum';
+	text-decoration: none;
+	border: none;
+	background-color: #4CAF50;
+	padding: 8px 12px;
+	margin: 0 3px;
+	border-radius: 8px;
+	transition: .2s ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
+}
+.bt button:before{
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -55px;
+	height: 40px;
+	width: 35px;
+	background: linear-gradient(90deg,rgba(255,255,255,.1), rgba(255,255,255,.5));
+	transform: skewX(-45deg);
+}
+.bt button:hover{
+	background-color: green;
+}
+.bt button:hover::before{
+	left: 150px;
+	transition: .5s ease-in-out;
 }
