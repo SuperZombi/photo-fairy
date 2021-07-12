@@ -173,7 +173,7 @@ body{
 }
 
 .flickity-enabled.is-fullscreen {
-	max-height: 95%;
+	max-height: 94vh;
 }
 .carousel.is-fullscreen .carousel-image {
 	height: auto;
