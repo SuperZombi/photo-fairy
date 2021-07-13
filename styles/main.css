@@ -241,6 +241,8 @@ tr:nth-child(2n) {
 
 
 #dropdownmenu{
+	display: flex;
+	flex-wrap: wrap;
 	float: left;
 	height: auto;
 	width: calc(100% - 325px);
