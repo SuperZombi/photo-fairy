@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Fairy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="images/main/logo.png" type="image/png">
+	<!-- styles -->
+	<link rel="stylesheet" href="styles/animate.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
+	<link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- scripts -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
+	<script src='https://npmcdn.com/flickity-sync@2/flickity-sync.js'></script>
+	<script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script src="scripts/cup.js" type="text/javascript"></script>
+
+	<script src="header.html" type="text/javascript"></script>
+	<script src="scripts/cups.json"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</head>
+<body>
+<!-- Прелоадер -->
+<div class="preloader">
+	<div class="preloader__row">
+		<div class="preloader__item"></div>
+		<div class="preloader__item"></div>
+	</div>
+</div>
+
+<div id="body">
+	<div id="header" class="wow bounceIn">
+		
+	</div>
+
+	<h1 id="name" class="wow bounceInRight"></h1>
+
+	<div id="galery" class="wow bounceInLeft">
+		<div id="gallery-main" class="gallery-main">
+		</div>
+		<div id="gallery-nav" class="gallery-nav">
+		</div>
+	</div>
+
+
+	<div id="description" class="wow bounceInRight">
+		<div id="price"></div>
+		<table id="characteristics">
+		</table>
+	</div>
+
+	<div id="more_block" class="wow bounceInUp">
+
+	</div>
+
+</div>
+</body>
+</html>

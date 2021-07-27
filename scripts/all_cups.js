@@ -1,0 +1,208 @@
+function check_widht(firs_time){
+	if (window.innerWidth > 950){
+		document.getElementById("body").style.width = "85vw";
+		document.getElementById("logo").style.float = "left";
+		document.getElementById("logo").style.marginRight = "25px";
+		document.getElementById("filters").style.width = "25%";
+		document.getElementById("filters").style.marginLeft = 0;
+		document.getElementById("filters").style.marginRight = 0;
+		document.getElementById("right").style.maxWidth = "70%";
+	}
+	else{
+		document.getElementById("body").style.width = "auto";
+		document.getElementById("logo").style.float = "none";
+		document.getElementById("logo").style.marginRight = "auto";
+		document.getElementById("filters").style.width = "85%";
+		document.getElementById("filters").style.marginLeft = "auto";
+		document.getElementById("filters").style.marginRight = "auto";
+		document.getElementById("right").style.maxWidth = "100%";
+	}
+}
+window.addEventListener("resize", function(){
+	check_widht()
+});
+
+function build(key){
+	name = CUPS[key].name
+	image = CUPS[key].main_img
+	href = "cup.html?" + key
+
+	var a = document.createElement("a")
+	a.classList = "content_el"
+	a.href = href
+
+	var img = document.createElement("img")
+	img.src = image
+
+	var label = document.createElement("label")
+	label.innerHTML = name
+	label.title = name
+
+	a.appendChild(img)
+	a.appendChild(label)
+	document.getElementById("right").appendChild(a)
+}
+
+function load_content(){
+	document.getElementById("right").innerHTML = ""
+	params = window.location.href.split("?").slice(1)
+	if (params.length != 0){
+		Object.keys(CUPS).forEach(function (key){
+			if (params.length == 1){
+				if (CUPS[key].category.includes(params[0])){
+					build(key)
+				}
+			}
+			if (params.length == 2){
+				if (CUPS[key].category.includes(params[0]) && CUPS[key].category.includes(params[1])){
+					build(key)
+				}
+			}
+		});
+	}
+	else{
+		Object.keys(CUPS).forEach(function (key){
+			build(key)
+		});
+	}
+}
+
+function load_href(){
+	params = window.location.href.split("?").slice(1)
+	if (params.includes("child")){
+		document.getElementById("c1").checked = true;
+		group("group1", true)
+	}
+	if (params.includes("boy")){
+		document.getElementById("c2").checked = true;
+	}
+	if (params.includes("girl")){
+		document.getElementById("c3").checked = true;
+	}
+
+	if (params.includes("adult")){
+		document.getElementById("c4").checked = true;
+		group("group2", true)
+	}
+	if (params.includes("man")){
+		document.getElementById("c5").checked = true;
+	}
+	if (params.includes("woman")){
+		document.getElementById("c6").checked = true;
+	}
+}
+
+function active_group(g1, g2){
+	document.getElementById(g1).style.display = "block";
+	document.getElementById(g1).style.transform = "scale(1)";
+	document.getElementById(g2).style.display = "none";
+	document.getElementById(g2).style.transform = "scale(0)";
+}
+function group(g, what){
+	if (g == "group1" && what){
+		document.title = "Photo Fairy - Детские чашки";
+		setTimeout(function(){ active_group("group1", "group2") }, 0)
+		document.getElementById("c4").checked = false;
+		document.getElementById("c5").checked = false;
+		document.getElementById("c6").checked = false;
+	}
+	if (g == "group2" && what){
+		document.title = "Photo Fairy - Взрослые чашки";
+		setTimeout(function(){ active_group("group2", "group1") }, 0)
+		document.getElementById("c1").checked = false;
+		document.getElementById("c2").checked = false;
+		document.getElementById("c3").checked = false;
+	}
+	if (!what){
+		document.title = "Photo Fairy - Все чашки";
+		setTimeout(function(){
+			document.getElementById(g).style.display = "none";
+			document.getElementById(g).style.transform = "scale(0)";
+		}, 0)
+		
+		document.getElementById("c2").checked = false;
+		document.getElementById("c3").checked = false;
+		document.getElementById("c5").checked = false;
+		document.getElementById("c6").checked = false;
+	}
+}
+
+function check_groups(clicked){
+	// Group 1
+	if (clicked == "c1"){
+		if (document.getElementById("c1").checked){
+			group("group1", true);
+			location.hash = "?child";
+		}
+		else {
+			group("group1", false);
+			location.hash = "";
+		}
+	}
+	
+	if (clicked == "c2"){
+		if (document.getElementById("c2").checked){
+			document.getElementById("c3").checked = false;
+			location.hash = "?child?boy";
+		}
+		else { location.hash = "?child"; }
+	}
+	if (clicked == "c3"){
+		if (document.getElementById("c3").checked){
+			document.getElementById("c2").checked = false;
+			location.hash = "?child?girl";
+		}
+		else { location.hash = "?child"; }
+	}
+
+
+	// Group 2
+	if (clicked == "c4"){
+		if (document.getElementById("c4").checked){
+			group("group2", true);
+			location.hash = "?adult";
+		}
+		else {
+			group("group2", false);
+			location.hash = "";
+		}
+	}
+
+	if (clicked == "c5"){
+		if (document.getElementById("c5").checked){
+			document.getElementById("c6").checked = false;
+			location.hash = "?adult?man";
+		}
+		else { location.hash = "?adult"; }
+	}
+	if (clicked == "c6"){
+		if (document.getElementById("c6").checked){
+			document.getElementById("c5").checked = false;
+			location.hash = "?adult?woman";
+		}
+		else { location.hash = "?adult"; }
+	}
+}
+
+window.onload = function(){
+	try{
+		document.getElementById("header").innerHTML = header_;
+	}
+	catch{;}
+
+	window.scrollTo(0,0);
+	check_widht();
+	load_href();
+	load_content();
+
+	window.addEventListener("hashchange", function(){load_content();});
+
+	document.body.classList.add('loaded_hiding');
+	document.getElementById("body").style.transform = "scale(1)";
+	new WOW().init();
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+		document.getElementById("body").style.transition = "0.3s ease-in-out";
+	}, 500);
+}

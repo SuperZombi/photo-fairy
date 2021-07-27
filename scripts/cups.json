@@ -1,0 +1,44 @@
+CUPS = {
+	"standart":{
+		// Обязательные поля
+		"name":"Чашечка",
+		"main_img":"images/example1/example_01.png",
+		"price":"100 грн",
+		"category":["", "adult", "woman"],
+		//
+		"_360":"https://sketchfab.com/models/9f8276f4a7f44f6bad309dfb6d9a5c87/embed",
+		"youtube":"https://www.youtube.com/embed/umUaBuQ5XD0",
+		"video":"images/example1/video1.mp4",
+		"other_imgs":["images/example1/example_02.png", "images/example1/example_03.png", "images/example1/example_04.png"],
+		"characteristic":{
+			"Объем":"330 мл.",
+			"Материал":"Керамика",
+			"Основной цвет":"Белый",
+			"Диаметр":"8 см.",
+			"Высота":"9,5 см.",
+			"Вес":"34 г."
+		},
+		"description":"Чашка-хамелеон, которая меняет цвет от температуры жидкости, которую содержит.\nНа чашку можно выбрать любую фотографию по желанию.\nОтличный подарок для друзей и близких, или же яркий элемент декора для Вашей столовой и кухни."
+	},
+
+	"standart2":{
+		"name":"Название Чашки2",
+		"main_img":"images/example1/example_02.png",
+		"price":"99 грн",
+		"category":["", "adult", "man"],
+	},
+
+	"standart3":{
+		"name":"Название Чашки3 большое агагагга",
+		"main_img":"images/example1/example_03.png",
+		"price":"99 грн",
+		"category":["", "child", "boy"],
+	},
+
+	"standart4":{
+		"name":"Название Чашки4",
+		"main_img":"images/example1/example_04.png",
+		"price":"99 грн",
+		"category":["", "child", "girl"],
+	},
+}
