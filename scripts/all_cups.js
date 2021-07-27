@@ -25,7 +25,7 @@ window.addEventListener("resize", function(){
 function build(key){
 	name = CUPS[key].name
 	image = CUPS[key].main_img
-	href = "cup.html?" + key
+	href = "cup.html#?" + key
 
 	var a = document.createElement("a")
 	a.classList = "content_el"
