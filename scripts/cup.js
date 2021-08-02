@@ -122,7 +122,7 @@ window.onload = function(){
 
 			// mp4 видео
 			if (cup_arr.video){
-				comand1 += `<div class="gallery-cell"><video loop controls \
+				comand1 += `<div class="gallery-cell"><video loop controls> \
 				<source src="${cup_arr.video}"></video></div>`
 				comand2 += `<div class="gallery-cell"><div style="padding: 10% 20%;"><svg xmlns="http://www.w3.org/2000/svg" id="i-youtube-icon-multicolored" viewBox="0 0 24 16"><path d="M23.5 2.5a3 3 0 00-2.12-2C19.5 0 12 0 12 0S4.49 0 2.62.48A3 3 0 00.5 2.5 28.42 28.42 0 000 8a28.42 28.42 0 00.5 5.5 2.93 2.93 0 002.12 2C4.49 16 12 16 12 16s7.5 0 9.38-.48a2.93 2.93 0 002.12-2A28.42 28.42 0 0024 8a28.42 28.42 0 00-.5-5.5z" fill="#ec2725"></path><path d="M10 11V5l6 3z" fill="#fff"></path></svg></div></div>`
 			}
