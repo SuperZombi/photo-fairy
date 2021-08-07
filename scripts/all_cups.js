@@ -257,7 +257,6 @@ async function search(){
 
 saved_input = ""
 async function enter(e){
-	alert(e.key)
 	if (e.keyCode == 13){
 		if (document.activeElement === document.getElementById("search_input")){
 			search()
