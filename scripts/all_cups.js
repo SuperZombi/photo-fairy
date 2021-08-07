@@ -3,18 +3,18 @@ function check_widht(firs_time){
 		document.getElementById("body").style.width = "85vw";
 		document.getElementById("logo").style.float = "left";
 		document.getElementById("logo").style.marginRight = "25px";
-		document.getElementById("filters").style.width = "25%";
-		document.getElementById("filters").style.marginLeft = 0;
-		document.getElementById("filters").style.marginRight = 0;
+		document.getElementById("left").style.width = "25%";
+		document.getElementById("left").style.marginLeft = 0;
+		document.getElementById("left").style.marginRight = 0;
 		document.getElementById("right").style.maxWidth = "70%";
 	}
 	else{
 		document.getElementById("body").style.width = "auto";
 		document.getElementById("logo").style.float = "none";
 		document.getElementById("logo").style.marginRight = "auto";
-		document.getElementById("filters").style.width = "85%";
-		document.getElementById("filters").style.marginLeft = "auto";
-		document.getElementById("filters").style.marginRight = "auto";
+		document.getElementById("left").style.width = "85%";
+		document.getElementById("left").style.marginLeft = "auto";
+		document.getElementById("left").style.marginRight = "auto";
 		document.getElementById("right").style.maxWidth = "100%";
 	}
 }
@@ -43,8 +43,12 @@ function build(key){
 	document.getElementById("right").appendChild(a)
 }
 
-function load_content(){
+async function load_content(){
 	document.getElementById("right").innerHTML = ""
+	document.getElementById("right").style.transition = "0s";
+	document.getElementById("right").style.opacity = 0;
+	document.getElementById("right").style.transform = "translateY(50%)";
+
 	params = window.location.href.split("?").slice(1)
 	if (params.length != 0){
 		Object.keys(CUPS).forEach(function (key){
@@ -65,6 +69,13 @@ function load_content(){
 			build(key)
 		});
 	}
+
+	check_empty()
+
+	await sleep(50)
+	document.getElementById("right").style.transition = "0.3s";
+	document.getElementById("right").style.opacity = 1;
+	document.getElementById("right").style.transform = "";
 }
 
 function load_href(){
@@ -205,4 +216,74 @@ window.onload = function(){
 		document.body.classList.remove('loaded_hiding');
 		document.getElementById("body").style.transition = "0.3s ease-in-out";
 	}, 500);
+}
+
+
+function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
+async function search(){
+	zapros = document.getElementById("search_input").value
+	if (zapros){
+		document.getElementById("right").innerHTML = ""
+		document.getElementById("right").style.transition = "0s";
+		document.getElementById("right").style.opacity = 0;
+		document.getElementById("right").style.transform = "translateY(50%)";
+		Object.keys(CUPS).forEach(function (key){
+			if (CUPS[key].name.toLowerCase().includes(zapros.toLowerCase())){
+				build(key)
+			}
+		});
+		await sleep(50)
+		document.getElementById("right").style.transition = "0.3s";
+		document.getElementById("right").style.opacity = 1;
+		document.getElementById("right").style.transform = "";
+
+		check_empty()
+	}
+	else{
+		elem = document.getElementById("search").style.transform
+		elem = "translate(10px)"
+		await sleep(100)
+		elem = "translate(-10px)"
+		await sleep(100)
+		document.getElementById("search").style.transform = "translate(10px)"
+		await sleep(100)
+		document.getElementById("search").style.transform = "translate(-10px)"
+		await sleep(100)
+		document.getElementById("search").style.transform = "translate(10px)"
+		await sleep(100)
+		document.getElementById("search").style.transform = ""
+	}
+}
+
+saved_input = ""
+async function enter(e){
+	if (e.keyCode == 13){
+		if (document.activeElement === document.getElementById("search_input")){
+			search()
+		}
+	}
+	else if (e.keyCode == 8){
+		if (!document.getElementById("search_input").value){
+			if (saved_input != document.getElementById("search_input").value){
+				load_content()
+			}
+		}
+		else{
+			if (saved_input != document.getElementById("search_input").value){
+				search()
+			}
+		}
+	}
+	else{
+		if (saved_input != document.getElementById("search_input").value){
+			search()
+		}
+	}
+	saved_input = document.getElementById("search_input").value
+}
+
+function check_empty(){
+	if (document.getElementById("right").innerHTML == ""){
+		document.getElementById("right").innerHTML = `<h2 id="empty">Тут пусто   ¯\\_(ツ)_/¯</h2>`
+	}
 }
