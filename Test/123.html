@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+</head>
+<body>
+	
+<script>
+	function readTextFile() {
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", "testing.txt", true);
+  rawFile.onreadystatechange = function() {
+    if (rawFile.readyState === 4) {
+      var allText = rawFile.responseText;
+      console.log(allText);
+    }
+  }
+  rawFile.send();
+}
+
+readTextFile()
+</script>
+</body>
+</html>
