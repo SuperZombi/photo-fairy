@@ -257,9 +257,7 @@ async function search(){
 
 async function enter(e){
 	if (e.keyCode == 13){
-		if (document.activeElement === document.getElementById("search_input")){
-			search()
-		}
+		search()
 	}
 	else if (e.key == "Backspace"){
 		if (!document.getElementById("search_input").value){
