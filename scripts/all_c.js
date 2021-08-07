@@ -1,4 +1,3 @@
-console.log("here")
 function check_widht(firs_time){
 	if (window.innerWidth > 950){
 		document.getElementById("body").style.width = "85vw";
@@ -256,7 +255,6 @@ async function search(){
 	}
 }
 
-saved_input = ""
 async function enter(e){
 	if (e.keyCode == 13){
 		if (document.activeElement === document.getElementById("search_input")){
@@ -265,23 +263,15 @@ async function enter(e){
 	}
 	else if (e.key == "Backspace"){
 		if (!document.getElementById("search_input").value){
-			alert(saved_input)
-			if (saved_input != document.getElementById("search_input").value){
-				load_content()
-			}
+			load_content()
 		}
 		else{
-			if (saved_input != document.getElementById("search_input").value){
-				search()
-			}
-		}
-	}
-	else{
-		if (saved_input != document.getElementById("search_input").value){
 			search()
 		}
 	}
-	saved_input = document.getElementById("search_input").value
+	else{
+		search()
+	}
 }
 
 function check_empty(){
