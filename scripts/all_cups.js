@@ -1,3 +1,4 @@
+alert("here")
 function check_widht(firs_time){
 	if (window.innerWidth > 950){
 		document.getElementById("body").style.width = "85vw";
