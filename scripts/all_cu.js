@@ -263,6 +263,7 @@ async function enter(e){
 		}
 	}
 	else if (e.key == "Backspace"){
+		alert("here")
 		if (!document.getElementById("search_input").value){
 			if (saved_input != document.getElementById("search_input").value){
 				load_content()
@@ -280,13 +281,6 @@ async function enter(e){
 		}
 	}
 	saved_input = document.getElementById("search_input").value
-}
-function backspace(e){
-	if (e.inputType == "deleteContentBackward"){
-		if (!document.getElementById("search_input").value){
-			load_content()
-		}
-	}
 }
 
 function check_empty(){
