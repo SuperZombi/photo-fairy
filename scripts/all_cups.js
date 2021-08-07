@@ -257,12 +257,13 @@ async function search(){
 
 saved_input = ""
 async function enter(e){
+	alert(e.key)
 	if (e.keyCode == 13){
 		if (document.activeElement === document.getElementById("search_input")){
 			search()
 		}
 	}
-	else if (e.keyCode == 8){
+	else if (e.Key == "Backspace"){
 		if (!document.getElementById("search_input").value){
 			if (saved_input != document.getElementById("search_input").value){
 				load_content()
