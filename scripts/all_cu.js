@@ -264,8 +264,8 @@ async function enter(e){
 		}
 	}
 	else if (e.key == "Backspace"){
-		alert("here")
 		if (!document.getElementById("search_input").value){
+			alert(saved_input)
 			if (saved_input != document.getElementById("search_input").value){
 				load_content()
 			}
