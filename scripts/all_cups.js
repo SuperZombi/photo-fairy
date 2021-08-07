@@ -1,4 +1,3 @@
-console.log("here")
 function check_widht(firs_time){
 	if (window.innerWidth > 950){
 		document.getElementById("body").style.width = "85vw";
@@ -281,6 +280,13 @@ async function enter(e){
 		}
 	}
 	saved_input = document.getElementById("search_input").value
+}
+function backspace(e){
+	if (e.inputType == "deleteContentBackward"){
+		if (!document.getElementById("search_input").value){
+			load_content()
+		}
+	}
 }
 
 function check_empty(){
