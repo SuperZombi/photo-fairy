@@ -263,7 +263,7 @@ async function enter(e){
 			search()
 		}
 	}
-	else if (e.Key == "Backspace"){
+	else if (e.key == "Backspace"){
 		if (!document.getElementById("search_input").value){
 			if (saved_input != document.getElementById("search_input").value){
 				load_content()
