@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body{
 	background-color: grey;
@@ -107,9 +108,26 @@ body{
 	display: inline-block;
 	float: left;
 	margin-left: auto;
+	line-height: 50px;
 }
 #logo img{
-	height: 50px;
+	height: 43px;
+	vertical-align: middle;
+}
+.logo_text{
+	font-family: 'Pacifico', cursive;
+  font-size: 32px;
+	margin-left: 10px;
+	vertical-align: top;
+	color: #ff54f4;
+}
+#logo_text{
+	filter: drop-shadow(1px 2px 0px #5404d4);
+}
+#logo_text_back{
+	position: absolute;
+	-webkit-text-stroke: 1px #5404d4;
+	filter: drop-shadow(0px 0px 1px #5404d4);
 }
 
 #name{
@@ -532,4 +550,3 @@ tr:nth-child(2n) {
 	white-space: pre-wrap;
 	font-family: Arial;
 }
-/* -------- */
