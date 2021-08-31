@@ -1,6 +1,6 @@
 window.onload = function(){
 	try{
-		document.getElementById("header").innerHTML = header_;
+		document.getElementById("logo").innerHTML = logo_;
 	}
 	catch{;}
 
