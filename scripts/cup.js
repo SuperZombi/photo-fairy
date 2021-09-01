@@ -59,6 +59,8 @@ function return_(){
 	link.href = 'styles/not_found.css';
 	document.getElementsByTagName('head')[0].appendChild(link);
 
+	document.title = "Photo Fairy - Не найдено";
+
 	document.getElementById("body").innerHTML = "<h1 id='404'>404</h1>\
 											<p>Страница не найдена!</p>\
 											<a href='javascript:history.back();'>Вернуться</a>"
