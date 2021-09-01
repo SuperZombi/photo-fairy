@@ -54,8 +54,21 @@ function orientation(){
 }
 
 function return_(){
-	document.getElementById("body").innerHTML = "<h1>404 Not Found</h1>"
+	link = document.createElement('link');
+	link.rel  = 'stylesheet';
+	link.href = 'styles/not_found.css';
+	document.getElementsByTagName('head')[0].appendChild(link);
+
+	document.getElementById("body").innerHTML = "<h1 id='404'>404</h1>\
+											<p>Страница не найдена!</p>\
+											<a href='javascript:history.back();'>Вернуться</a>"
+	
+	script = document.createElement("script");
+	script.src = "scripts/not_found.js";
+	document.getElementsByTagName('head')[0].appendChild(script);
+
 	document.body.classList.add('loaded_hiding');
+	setTimeout(function(){document.getElementsByClassName("preloader")[0].style.display = "none";}, 300)
 	document.getElementById("body").style.transform = "scale(1)";
 }
 
