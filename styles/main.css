@@ -561,6 +561,33 @@ tr:nth-child(2n) {
 
 
 
+.loading{
+	background-color:lightgray;
+	border-radius: 12px;
+	transition:1.2s all linear;
+	animation: anim 1.2s infinite;
+	color: transparent;
+	min-height: 100px;
+	min-width: 150px;
+	width: 100%;
+}
+.loading *{
+	opacity: 0;
+}
+@keyframes anim {
+	from{
+		background-color:lightgray;
+	}
+	50%{
+		background-color:#E5E5E5;
+	}
+	to{
+		background-color:lightgray;
+	}
+}
+
+
+
 /*  Social Networks  */
 #social_networks{
 	list-style: none;
