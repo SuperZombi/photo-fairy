@@ -464,6 +464,14 @@ tr:nth-child(2n) {
 	    max-width: 28%;
 	}
 }
+@media all and (max-width: 700px) {
+	.dropdown{
+		margin: 4px;
+	}
+	.dropbtn{
+		padding: 12px;
+	}
+}
 
 .content_el img{
 	width: 100%;
