@@ -31,14 +31,20 @@ function build(key){
 	a.classList = "content_el"
 	a.href = href
 
+	var div = document.createElement("div")
+	div.className = "loading";
+	div.id = key
+
 	var img = document.createElement("img")
+	img.onload = function(){document.getElementById(key).classList.remove("loading")}
 	img.src = image
 
 	var label = document.createElement("label")
 	label.innerHTML = name
 	label.title = name
 
-	a.appendChild(img)
+	div.appendChild(img)
+	a.appendChild(div)
 	a.appendChild(label)
 	document.getElementById("right").appendChild(a)
 }
