@@ -562,7 +562,7 @@ tr:nth-child(2n) {
 
 
 /*  Social Networks  */
-ul{
+#social_networks{
 	list-style: none;
 	background-color: #0a122a;
 	padding: 10px;
@@ -573,7 +573,7 @@ ul{
 	bottom: 0;
 	margin-bottom: 0;
 }
-li{
+#social_networks a{
 	width: 35px;
 	height: 35px;
 	margin: 0 10px;
@@ -584,7 +584,7 @@ li{
 	transition: all 0.5s ease;
 	display: inline-block;
 }
-li i {
+#social_networks i {
 	color: #D8E2DC;
 	transition: all 0.5s ease;
 	position: relative;
@@ -594,39 +594,30 @@ li i {
 }
 
 .viber:hover{
-	border: 5px solid #8054a4;
+	border: 5px solid #8054a4 !important;
 	box-shadow: 0 0 15px #8054a4;
 }
 .viber:hover i {
-  color: #8054a4;
+  color: #8054a4 !important;
   text-shadow: 0 0 5px #8054a4;
 }
 
 .telegram i{ margin-right: 2px;}
 .telegram:hover{
-	border: 5px solid #31a9dc;
+	border: 5px solid #31a9dc !important;
 	box-shadow: 0 0 15px #31a9dc;
 }
 .telegram:hover i {
-  color: #31a9dc;
+  color: #31a9dc !important;
   text-shadow: 0 0 5px #31a9dc;
 }
 
 .facebook i { margin-right: 1px;}
 .facebook:hover{
-	border: 5px solid #3b5998;
+	border: 5px solid #3b5998 !important;
 	box-shadow: 0 0 15px #3b5998;
 }
 .facebook:hover i {
-  color: #3b5998;
+  color: #3b5998 !important;
   text-shadow: 0 0 5px #3b5998;
-}
-
-.instagram:hover{
-	border: 5px solid #bc2a8d;
-	box-shadow: 0 0 15px #bc2a8d;
-}
-.instagram:hover i {
-  color: #bc2a8d;
-  text-shadow: 0 0 5px #bc2a8d;
 }
