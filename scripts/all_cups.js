@@ -200,9 +200,10 @@ window.onload = function(){
 		document.getElementById("logo").innerHTML = logo_;
 
 		document.getElementById("body").innerHTML += '<div style="width:100%;float:right;height:50px;"></div>'
-		ul = document.createElement("ul");
-		ul.innerHTML = social_networks_;
-		document.getElementById("body").appendChild(ul);
+		div = document.createElement("div");
+		div.id = "social_networks";
+		div.innerHTML = social_networks_;
+		document.getElementById("body").appendChild(div);
 	}
 	catch{;}
 
