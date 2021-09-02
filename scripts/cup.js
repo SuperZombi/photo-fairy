@@ -63,7 +63,7 @@ function return_(){
 
 	document.getElementById("body").innerHTML = "<h1 id='404'>404</h1>\
 											<p>Страница не найдена!</p>\
-											<a href='javascript:history.back();'>Вернуться</a>"
+											<a id='back' href='javascript:history.back();'>Вернуться</a>"
 	
 	script = document.createElement("script");
 	script.src = "scripts/not_found.js";
