@@ -23,7 +23,7 @@ function check_widht(firs_time){
 		document.getElementById("description").style.width = "100%";
 		document.getElementById("description").style.maxHeight = "100%";
 		document.getElementById("dropdownmenu").style.maxWidth = "92vw";
-		document.getElementById("dropdownmenu").style.width = "100%";
+		document.getElementById("dropdownmenu").style.width = "100vw";
 		document.getElementById("dropdownmenu").style.textAlign = "center";
 		document.getElementById("logo").style.float = "none";
 
