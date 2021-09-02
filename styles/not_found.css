@@ -6,7 +6,7 @@ p{
 	font-size: 1.5em;
 	margin-bottom: 30px;
 }
-a{
+#back{
 	text-decoration: none;
 	color: #fff;
 	font-weight: 300;
@@ -18,7 +18,7 @@ a{
 	background-color: #86C0FF;
 	cursor: pointer;
 }
-a:hover {
+#back:hover {
 	background-color: #0064D2;
 	color: #fff;
 	cursor: pointer;
